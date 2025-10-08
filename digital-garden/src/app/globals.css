@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  /* Base */
+  --background: #fafafa;
+  --foreground: #0b0b0b;
+
+  /* Surfaces */
+  --surface: #ffffff;              /* cards/toolbars */
+  --surface-2: #f3f4f6;            /* subtle fills */
+  --border: rgba(0,0,0,0.12);
+
+  /* Content */
+  --muted: #6b7280;                /* gray-500 */
+  --muted-foreground: #4b5563;     /* gray-600 */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #f2f2f2;
+    --surface: #141414;
+    --surface-2: #1b1b1b;
+    --border: rgba(255,255,255,0.16);
+    --muted: #9ca3af;
+    --muted-foreground: #d1d5db;
+  }
+}
+
+/* Explicit theme override via data attribute */
+[data-theme="light"] {
+  --background: #fafafa;
+  --foreground: #0b0b0b;
+  --surface: #ffffff;
+  --surface-2: #f3f4f6;
+  --border: rgba(0,0,0,0.12);
+  --muted: #6b7280;
+  --muted-foreground: #4b5563;
+}
+
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #f2f2f2;
+  --surface: #141414;
+  --surface-2: #1b1b1b;
+  --border: rgba(255,255,255,0.16);
+  --muted: #9ca3af;
+  --muted-foreground: #d1d5db;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
